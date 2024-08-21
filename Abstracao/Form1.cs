@@ -28,7 +28,7 @@ namespace Abstracao
             {
                 case "Quadrado":
                     
-                Selecionar_Quadrado();
+                    Selecionar_Quadrado();
                     break;
 
                 case "Triangulo":
@@ -43,6 +43,7 @@ namespace Abstracao
 
                     Selecionar_Circunferencia();
                     break;
+               
                 default:
                     break;
             }
@@ -54,37 +55,57 @@ namespace Abstracao
         private void Selecionar_Quadrado()
         {
             ExibirBase(true);
-            lblBase.Visible = cmbForma.Text.Equals("Quadrado");
-            txtBase.Visible = cmbForma.Text.Equals("Quadrado");
+            ExibirAltura(false);
+            ExibirRaio(false);
+            cmbTriangulo.Visible = false;
         }
         private void Selecionar_Triangulo()
         {
-            ExibirBase(true);
-            ExibirAltura(true);
+            if (cmbTriangulo.Visible = cmbForma.Text.Equals("Triangulo"))
+            {
+                switch (cmbTriangulo.Text)
+                {
+                    case "Reto":
+                        ExibirBase(true);
+                        ExibirAltura(true);
+                        break;
+                    case "Isoceles":
+                        ExibirBase(true);
+                        ExibirAltura(true);
+                        break;
+                    case "Equilatero":
+                        ExibirBase(true);
+                        ExibirAltura(true);
+                        break;
+                    default:
+                        break;
 
-            lblBase.Visible = cmbForma.Text.Equals("Triangulo");
-            txtBase.Visible = cmbForma.Text.Equals("Triangulo");
-            lblAltura.Visible = cmbForma.Text.Equals("Triangulo");
-            txtAltura.Visible = cmbForma.Text.Equals("Triangulo");
-            cmbTriangulo.Visible = cmbForma.Text.Equals("Triangulo");
+                }
+            }
+            else
+            {
+                ExibirBase(false);
+                ExibirAltura(false);
+                ExibirRaio(false);
+            }
         }
         private void Selecionar_Retangulo()
         {
             ExibirAltura(true);
-            ExibirBase(true);
+            ExibirBase(true);           
+            ExibirRaio(false);
+            cmbTriangulo.Visible = false;
 
-            lblAltura.Visible = cmbForma.Text.Equals("Retangulo");
-            txtAltura.Visible = cmbForma.Text.Equals("Retangulo");
-        
-            lblBase.Visible = cmbForma.Text.Equals("Retangulo");
-            txtBase.Visible = cmbForma.Text.Equals("Retangulo");
+
         }
         private void Selecionar_Circunferencia()
         {
+            ExibirBase(false);
+            ExibirAltura(false);
+            ExibirRaio(true);
+            cmbTriangulo.Visible = false;
 
-            ExibirAltura(true);
-            lblRaio.Visible = cmbForma.Text.Equals("Circunferencia");
-            txtRaio.Visible = cmbForma.Text.Equals("Circunferencia");
+
         }
 
        private void ExibirBase(bool visivel)
@@ -114,8 +135,26 @@ namespace Abstracao
         {
             if(cmbForma.Text.Equals("Quadrado"))
             {
-
+                FormaGeometrica quadrado = new Quadrado()
+                {
+                    Base = Convert.ToDouble(txtBase.Text)
+                };
+                cmbObjetos.Items.Add(quadrado);
             }
+           
+        }
+        
+        private void cmbObjetos_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            FormaGeometrica obj =cmbObjetos.SelectedItem as FormaGeometrica;
+            txtArea.Text = obj.CalcularArea().ToString();
+            txtPerimetro.Text = obj.CalcularPerimetro().ToString();           
+        }
+
+        private void txtPerimetro_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
+
 }

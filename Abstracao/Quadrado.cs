@@ -6,9 +6,9 @@ namespace Abstracao
     {
        
 
-        private int _base;
+        private double _base;
 
-        public int Base
+        public double Base
         {
             get { return _base; }
             set { _base = value; }
@@ -24,6 +24,11 @@ namespace Abstracao
         public override double CalcularPerimetro()
         {
             return (_base * 4);
+        }
+
+        public override string ToString()
+        {
+            return $"Quadrado ({_base})";
         }
     }
 }

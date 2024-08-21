@@ -24,23 +24,44 @@ namespace Abstracao
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            Selecionar_Quadrado();
-            Selecionar_Triangulo();
-            Selecionar_Retangulo();
-            Selecionar_Circunferencia();
+            switch(cmbForma.Text)
+            {
+                case "Quadrado":
+                    
+                Selecionar_Quadrado();
+                    break;
 
+                case "Triangulo":
+
+                    Selecionar_Triangulo(); 
+                    break;
+                case "Retangulo":
+
+                    Selecionar_Retangulo();
+                    break;
+                case "Circunferencia":
+
+                    Selecionar_Circunferencia();
+                    break;
+                default:
+                    break;
+            }
+           
+    
         }
 
 
         private void Selecionar_Quadrado()
         {
-
+            ExibirBase(true);
             lblBase.Visible = cmbForma.Text.Equals("Quadrado");
             txtBase.Visible = cmbForma.Text.Equals("Quadrado");
         }
         private void Selecionar_Triangulo()
-        { 
+        {
+            ExibirBase(true);
+            ExibirAltura(true);
+
             lblBase.Visible = cmbForma.Text.Equals("Triangulo");
             txtBase.Visible = cmbForma.Text.Equals("Triangulo");
             lblAltura.Visible = cmbForma.Text.Equals("Triangulo");
@@ -49,6 +70,8 @@ namespace Abstracao
         }
         private void Selecionar_Retangulo()
         {
+            ExibirAltura(true);
+            ExibirBase(true);
 
             lblAltura.Visible = cmbForma.Text.Equals("Retangulo");
             txtAltura.Visible = cmbForma.Text.Equals("Retangulo");
@@ -58,10 +81,23 @@ namespace Abstracao
         }
         private void Selecionar_Circunferencia()
         {
-     
 
+            ExibirAltura(true);
             lblRaio.Visible = cmbForma.Text.Equals("Circunferencia");
             txtRaio.Visible = cmbForma.Text.Equals("Circunferencia");
+        }
+
+       private void ExibirBase(bool visivel)
+        {
+            lblBase.Visible = txtBase.Visible = visivel;
+        }
+        private void ExibirAltura(bool visivel)
+        {
+            lblAltura.Visible = txtAltura.Visible = visivel;
+        }
+        private void ExibirRaio(bool visivel)
+        {
+            lblRaio.Visible = txtRaio.Visible = visivel;
         }
 
         private void txtArea_TextChanged(object sender, EventArgs e)
@@ -72,6 +108,14 @@ namespace Abstracao
         private void lblArea_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCriar_Click(object sender, EventArgs e)
+        {
+            if(cmbForma.Text.Equals("Quadrado"))
+            {
+
+            }
         }
     }
 }

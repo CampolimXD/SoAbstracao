@@ -31,18 +31,18 @@
             this.cmbForma = new System.Windows.Forms.ComboBox();
             this.cmbTriangulo = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblBase = new System.Windows.Forms.Label();
-            this.lblAltura = new System.Windows.Forms.Label();
-            this.lblRaio = new System.Windows.Forms.Label();
-            this.txtBase = new System.Windows.Forms.TextBox();
-            this.txtAltura = new System.Windows.Forms.TextBox();
-            this.txtRaio = new System.Windows.Forms.TextBox();
-            this.lblArea = new System.Windows.Forms.Label();
-            this.txtArea = new System.Windows.Forms.TextBox();
-            this.lblPerimetro = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cmbObjetos = new System.Windows.Forms.ComboBox();
             this.btnCriar = new System.Windows.Forms.Button();
+            this.cmbObjetos = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblPerimetro = new System.Windows.Forms.Label();
+            this.txtArea = new System.Windows.Forms.TextBox();
+            this.lblArea = new System.Windows.Forms.Label();
+            this.txtRaio = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
+            this.txtBase = new System.Windows.Forms.TextBox();
+            this.lblBase = new System.Windows.Forms.Label();
+            this.lblRaio = new System.Windows.Forms.Label();
+            this.lblAltura = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,99 +98,15 @@
             this.groupBox1.Text = "Forma geometrica";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // lblBase
+            // btnCriar
             // 
-            this.lblBase.AutoSize = true;
-            this.lblBase.Location = new System.Drawing.Point(25, 83);
-            this.lblBase.Name = "lblBase";
-            this.lblBase.Size = new System.Drawing.Size(34, 13);
-            this.lblBase.TabIndex = 3;
-            this.lblBase.Text = "&Base:";
-            this.lblBase.Visible = false;
-            // 
-            // lblAltura
-            // 
-            this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(25, 111);
-            this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(37, 13);
-            this.lblAltura.TabIndex = 4;
-            this.lblAltura.Text = "&Altura:";
-            this.lblAltura.Visible = false;
-            // 
-            // lblRaio
-            // 
-            this.lblRaio.AutoSize = true;
-            this.lblRaio.Location = new System.Drawing.Point(25, 139);
-            this.lblRaio.Name = "lblRaio";
-            this.lblRaio.Size = new System.Drawing.Size(32, 13);
-            this.lblRaio.TabIndex = 5;
-            this.lblRaio.Text = "&Raio:";
-            this.lblRaio.Visible = false;
-            // 
-            // txtBase
-            // 
-            this.txtBase.Location = new System.Drawing.Point(66, 83);
-            this.txtBase.Name = "txtBase";
-            this.txtBase.Size = new System.Drawing.Size(100, 20);
-            this.txtBase.TabIndex = 6;
-            this.txtBase.Visible = false;
-            // 
-            // txtAltura
-            // 
-            this.txtAltura.Location = new System.Drawing.Point(66, 109);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(100, 20);
-            this.txtAltura.TabIndex = 7;
-            this.txtAltura.Visible = false;
-            // 
-            // txtRaio
-            // 
-            this.txtRaio.Location = new System.Drawing.Point(66, 136);
-            this.txtRaio.Name = "txtRaio";
-            this.txtRaio.Size = new System.Drawing.Size(100, 20);
-            this.txtRaio.TabIndex = 8;
-            this.txtRaio.Visible = false;
-            // 
-            // lblArea
-            // 
-            this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(427, 99);
-            this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(32, 13);
-            this.lblArea.TabIndex = 9;
-            this.lblArea.Text = "Area:";
-            this.lblArea.Visible = false;
-            this.lblArea.Click += new System.EventHandler(this.lblArea_Click);
-            // 
-            // txtArea
-            // 
-            this.txtArea.Enabled = false;
-            this.txtArea.Location = new System.Drawing.Point(474, 92);
-            this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(100, 20);
-            this.txtArea.TabIndex = 10;
-            this.txtArea.Visible = false;
-            this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
-            // 
-            // lblPerimetro
-            // 
-            this.lblPerimetro.AutoSize = true;
-            this.lblPerimetro.Location = new System.Drawing.Point(414, 126);
-            this.lblPerimetro.Name = "lblPerimetro";
-            this.lblPerimetro.Size = new System.Drawing.Size(54, 13);
-            this.lblPerimetro.TabIndex = 11;
-            this.lblPerimetro.Text = "Perimetro:";
-            this.lblPerimetro.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(474, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Visible = false;
+            this.btnCriar.Location = new System.Drawing.Point(352, 33);
+            this.btnCriar.Name = "btnCriar";
+            this.btnCriar.Size = new System.Drawing.Size(75, 23);
+            this.btnCriar.TabIndex = 14;
+            this.btnCriar.Text = "&Criar";
+            this.btnCriar.UseVisualStyleBackColor = true;
+            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
             // cmbObjetos
             // 
@@ -205,14 +121,99 @@
             this.cmbObjetos.TabIndex = 13;
             this.cmbObjetos.Visible = false;
             // 
-            // btnCriar
+            // textBox1
             // 
-            this.btnCriar.Location = new System.Drawing.Point(352, 33);
-            this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(75, 23);
-            this.btnCriar.TabIndex = 14;
-            this.btnCriar.Text = "&Criar";
-            this.btnCriar.UseVisualStyleBackColor = true;
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(474, 123);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.Visible = false;
+            // 
+            // lblPerimetro
+            // 
+            this.lblPerimetro.AutoSize = true;
+            this.lblPerimetro.Location = new System.Drawing.Point(414, 126);
+            this.lblPerimetro.Name = "lblPerimetro";
+            this.lblPerimetro.Size = new System.Drawing.Size(54, 13);
+            this.lblPerimetro.TabIndex = 11;
+            this.lblPerimetro.Text = "Perimetro:";
+            this.lblPerimetro.Visible = false;
+            // 
+            // txtArea
+            // 
+            this.txtArea.Enabled = false;
+            this.txtArea.Location = new System.Drawing.Point(474, 92);
+            this.txtArea.Name = "txtArea";
+            this.txtArea.Size = new System.Drawing.Size(100, 20);
+            this.txtArea.TabIndex = 10;
+            this.txtArea.Visible = false;
+            this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
+            // 
+            // lblArea
+            // 
+            this.lblArea.AutoSize = true;
+            this.lblArea.Location = new System.Drawing.Point(427, 99);
+            this.lblArea.Name = "lblArea";
+            this.lblArea.Size = new System.Drawing.Size(32, 13);
+            this.lblArea.TabIndex = 9;
+            this.lblArea.Text = "Area:";
+            this.lblArea.Visible = false;
+            this.lblArea.Click += new System.EventHandler(this.lblArea_Click);
+            // 
+            // txtRaio
+            // 
+            this.txtRaio.Location = new System.Drawing.Point(66, 136);
+            this.txtRaio.Name = "txtRaio";
+            this.txtRaio.Size = new System.Drawing.Size(100, 20);
+            this.txtRaio.TabIndex = 8;
+            this.txtRaio.Visible = false;
+            // 
+            // txtAltura
+            // 
+            this.txtAltura.Location = new System.Drawing.Point(66, 109);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(100, 20);
+            this.txtAltura.TabIndex = 7;
+            this.txtAltura.Visible = false;
+            // 
+            // txtBase
+            // 
+            this.txtBase.Location = new System.Drawing.Point(66, 83);
+            this.txtBase.Name = "txtBase";
+            this.txtBase.Size = new System.Drawing.Size(100, 20);
+            this.txtBase.TabIndex = 6;
+            this.txtBase.Visible = false;
+            // 
+            // lblBase
+            // 
+            this.lblBase.AutoSize = true;
+            this.lblBase.Location = new System.Drawing.Point(25, 83);
+            this.lblBase.Name = "lblBase";
+            this.lblBase.Size = new System.Drawing.Size(34, 13);
+            this.lblBase.TabIndex = 3;
+            this.lblBase.Text = "&Base:";
+            this.lblBase.Visible = false;
+            // 
+            // lblRaio
+            // 
+            this.lblRaio.AutoSize = true;
+            this.lblRaio.Location = new System.Drawing.Point(25, 139);
+            this.lblRaio.Name = "lblRaio";
+            this.lblRaio.Size = new System.Drawing.Size(32, 13);
+            this.lblRaio.TabIndex = 5;
+            this.lblRaio.Text = "&Raio:";
+            this.lblRaio.Visible = false;
+            // 
+            // lblAltura
+            // 
+            this.lblAltura.AutoSize = true;
+            this.lblAltura.Location = new System.Drawing.Point(25, 111);
+            this.lblAltura.Name = "lblAltura";
+            this.lblAltura.Size = new System.Drawing.Size(37, 13);
+            this.lblAltura.TabIndex = 4;
+            this.lblAltura.Text = "&Altura:";
+            this.lblAltura.Visible = false;
             // 
             // Form1
             // 

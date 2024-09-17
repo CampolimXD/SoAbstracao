@@ -24,16 +24,16 @@ namespace Abstracao
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(cmbForma.Text)
+            switch (cmbForma.Text)
             {
                 case "Quadrado":
-                    
-                Selecionar_Quadrado();
+
+                    Selecionar_Quadrado();
                     break;
 
                 case "Triangulo":
 
-                    Selecionar_Triangulo(); 
+                    Selecionar_Triangulo();
                     break;
                 case "Retangulo":
 
@@ -46,8 +46,8 @@ namespace Abstracao
                 default:
                     break;
             }
-           
-    
+
+
         }
 
 
@@ -59,32 +59,64 @@ namespace Abstracao
         }
         private void Selecionar_Triangulo()
         {
-            ExibirBase(true);
-            ExibirAltura(true);
-
+            Tipos_triangulo();
+            
             lblBase.Visible = cmbForma.Text.Equals("Triangulo");
             txtBase.Visible = cmbForma.Text.Equals("Triangulo");
             lblAltura.Visible = cmbForma.Text.Equals("Triangulo");
             txtAltura.Visible = cmbForma.Text.Equals("Triangulo");
             cmbTriangulo.Visible = cmbForma.Text.Equals("Triangulo");
         }
+        private void Selecionar_Triangulo_reto()
+        {
+            ExibirBase(true);
+            //area = (baseTriangulo * alturaTriangulo) / 2;
+
+        }
+        private void Selecionar_Triangulo_equilatero()
+        {
+            
+            ExibirBase(true);
+        }
+        private void Selecionar_Triangulo_isoceles()
+        {
+            ExibirBase(true);
+            ExibirAltura(true);  
+                
+        }
+        private void Tipos_triangulo()
+        {
+            switch (cmbTriangulo.Text)
+            {
+                case "Isoceles":
+
+                    Selecionar_Triangulo_isoceles();
+                    break;
+
+                case "Reto":
+
+                    Selecionar_Triangulo_reto();
+                    break;
+                case "Equilatero":
+
+                    Selecionar_Triangulo_equilatero();
+                    break;
+               
+                default:
+                    break;
+            }
+        }
         private void Selecionar_Retangulo()
         {
             ExibirAltura(true);
             ExibirBase(true);
-
-            lblAltura.Visible = cmbForma.Text.Equals("Retangulo");
-            txtAltura.Visible = cmbForma.Text.Equals("Retangulo");
         
-            lblBase.Visible = cmbForma.Text.Equals("Retangulo");
-            txtBase.Visible = cmbForma.Text.Equals("Retangulo");
         }
         private void Selecionar_Circunferencia()
         {
+            
+            ExibirRaio(true);
 
-            ExibirAltura(true);
-            lblRaio.Visible = cmbForma.Text.Equals("Circunferencia");
-            txtRaio.Visible = cmbForma.Text.Equals("Circunferencia");
         }
 
        private void ExibirBase(bool visivel)

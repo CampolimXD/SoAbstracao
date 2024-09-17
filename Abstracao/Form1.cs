@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -54,35 +55,44 @@ namespace Abstracao
         private void Selecionar_Quadrado()
         {
             ExibirBase(true);
-            lblBase.Visible = cmbForma.Text.Equals("Quadrado");
-            txtBase.Visible = cmbForma.Text.Equals("Quadrado");
+            ExibirRaio(false);
+            ExibirAltura(false);
+            MostraTriangulos(false);
+
         }
         private void Selecionar_Triangulo()
         {
-            Tipos_triangulo();
-            
-            lblBase.Visible = cmbForma.Text.Equals("Triangulo");
-            txtBase.Visible = cmbForma.Text.Equals("Triangulo");
-            lblAltura.Visible = cmbForma.Text.Equals("Triangulo");
-            txtAltura.Visible = cmbForma.Text.Equals("Triangulo");
-            cmbTriangulo.Visible = cmbForma.Text.Equals("Triangulo");
+            ExibirRaio(false);
+            ExibirAltura(false);
+            ExibirBase(false);
+            MostraTriangulos(true);
+        }
+        private void MostraTriangulos(bool visivel)
+        {
+            cmbTriangulo.Visible = visivel;
         }
         private void Selecionar_Triangulo_reto()
         {
             ExibirBase(true);
-            //area = (baseTriangulo * alturaTriangulo) / 2;
+            ExibirAltura(false);
+            ExibirRaio(false);
+            ///area = (baseTriangulo * alturaTriangulo) / 2;
 
         }
         private void Selecionar_Triangulo_equilatero()
         {
-            
             ExibirBase(true);
+            ExibirAltura(false);
+            ExibirRaio(false);
+            // area = (Math.Sqrt(3) / 4) * Math.Pow(baseTriangulo, 2);
         }
         private void Selecionar_Triangulo_isoceles()
         {
             ExibirBase(true);
-            ExibirAltura(true);  
-                
+            ExibirAltura(true); 
+            ExibirRaio(false);
+            //area = (baseTriangulo * alturaTriangulo) / 2;
+
         }
         private void Tipos_triangulo()
         {
@@ -110,12 +120,17 @@ namespace Abstracao
         {
             ExibirAltura(true);
             ExibirBase(true);
-        
+            ExibirRaio(false);
+            MostraTriangulos(false);
+
         }
         private void Selecionar_Circunferencia()
         {
             
             ExibirRaio(true);
+            ExibirAltura(false);
+            ExibirBase(false);
+            MostraTriangulos(false);
 
         }
 
@@ -144,10 +159,24 @@ namespace Abstracao
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-            if(cmbForma.Text.Equals("Quadrado"))
+            if (cmbForma.Text.Equals("Quadrado"))
             {
-
+                FormaGeometrica quadrado = new Quadrado()
+                {
+                    // Base = Convert.ToDouble(txtBase.Text)
+                };
+                cmbObjetos.Items.Add(quadrado);
             }
+        }
+
+        private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTriangulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Tipos_triangulo();
         }
     }
 }

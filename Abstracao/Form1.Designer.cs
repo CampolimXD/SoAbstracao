@@ -33,7 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCriar = new System.Windows.Forms.Button();
             this.cmbObjetos = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPerimetro = new System.Windows.Forms.TextBox();
             this.lblPerimetro = new System.Windows.Forms.Label();
             this.txtArea = new System.Windows.Forms.TextBox();
             this.lblArea = new System.Windows.Forms.Label();
@@ -55,9 +55,10 @@
             "Retangulo",
             "Circunferencia",
             "quadrado"});
-            this.cmbForma.Location = new System.Drawing.Point(28, 33);
+            this.cmbForma.Location = new System.Drawing.Point(42, 51);
+            this.cmbForma.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbForma.Name = "cmbForma";
-            this.cmbForma.Size = new System.Drawing.Size(121, 21);
+            this.cmbForma.Size = new System.Drawing.Size(180, 28);
             this.cmbForma.TabIndex = 0;
             this.cmbForma.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -65,20 +66,22 @@
             // 
             this.cmbTriangulo.FormattingEnabled = true;
             this.cmbTriangulo.Items.AddRange(new object[] {
+            "Reto ",
             "Equilatero",
-            "Isoceles",
-            "Reto"});
-            this.cmbTriangulo.Location = new System.Drawing.Point(180, 35);
+            "Isoceles"});
+            this.cmbTriangulo.Location = new System.Drawing.Point(270, 54);
+            this.cmbTriangulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbTriangulo.Name = "cmbTriangulo";
-            this.cmbTriangulo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTriangulo.Size = new System.Drawing.Size(180, 28);
             this.cmbTriangulo.TabIndex = 1;
             this.cmbTriangulo.Visible = false;
+            this.cmbTriangulo.SelectedIndexChanged += new System.EventHandler(this.cmbTriangulo_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnCriar);
             this.groupBox1.Controls.Add(this.cmbObjetos);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtPerimetro);
             this.groupBox1.Controls.Add(this.lblPerimetro);
             this.groupBox1.Controls.Add(this.txtArea);
             this.groupBox1.Controls.Add(this.lblArea);
@@ -90,9 +93,11 @@
             this.groupBox1.Controls.Add(this.lblBase);
             this.groupBox1.Controls.Add(this.lblRaio);
             this.groupBox1.Controls.Add(this.lblAltura);
-            this.groupBox1.Location = new System.Drawing.Point(33, 31);
+            this.groupBox1.Location = new System.Drawing.Point(50, 48);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(638, 244);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(957, 375);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forma geometrica";
@@ -100,9 +105,10 @@
             // 
             // btnCriar
             // 
-            this.btnCriar.Location = new System.Drawing.Point(352, 33);
+            this.btnCriar.Location = new System.Drawing.Point(528, 51);
+            this.btnCriar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(75, 23);
+            this.btnCriar.Size = new System.Drawing.Size(112, 35);
             this.btnCriar.TabIndex = 14;
             this.btnCriar.Text = "&Criar";
             this.btnCriar.UseVisualStyleBackColor = true;
@@ -111,86 +117,89 @@
             // cmbObjetos
             // 
             this.cmbObjetos.FormattingEnabled = true;
-            this.cmbObjetos.Items.AddRange(new object[] {
-            "Equilatero",
-            "Isoceles",
-            "Reto"});
-            this.cmbObjetos.Location = new System.Drawing.Point(462, 35);
+            this.cmbObjetos.Location = new System.Drawing.Point(693, 54);
+            this.cmbObjetos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbObjetos.Name = "cmbObjetos";
-            this.cmbObjetos.Size = new System.Drawing.Size(121, 21);
+            this.cmbObjetos.Size = new System.Drawing.Size(180, 28);
             this.cmbObjetos.TabIndex = 13;
-            this.cmbObjetos.Visible = false;
+            this.cmbObjetos.SelectedIndexChanged += new System.EventHandler(this.cmbObjetos_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtPerimetro
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(474, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Visible = false;
+            this.txtPerimetro.Enabled = false;
+            this.txtPerimetro.Location = new System.Drawing.Point(711, 189);
+            this.txtPerimetro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPerimetro.Name = "txtPerimetro";
+            this.txtPerimetro.ReadOnly = true;
+            this.txtPerimetro.Size = new System.Drawing.Size(148, 26);
+            this.txtPerimetro.TabIndex = 12;
             // 
             // lblPerimetro
             // 
             this.lblPerimetro.AutoSize = true;
-            this.lblPerimetro.Location = new System.Drawing.Point(414, 126);
+            this.lblPerimetro.Location = new System.Drawing.Point(621, 194);
+            this.lblPerimetro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPerimetro.Name = "lblPerimetro";
-            this.lblPerimetro.Size = new System.Drawing.Size(54, 13);
+            this.lblPerimetro.Size = new System.Drawing.Size(81, 20);
             this.lblPerimetro.TabIndex = 11;
             this.lblPerimetro.Text = "Perimetro:";
-            this.lblPerimetro.Visible = false;
             // 
             // txtArea
             // 
             this.txtArea.Enabled = false;
-            this.txtArea.Location = new System.Drawing.Point(474, 92);
+            this.txtArea.Location = new System.Drawing.Point(711, 142);
+            this.txtArea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(100, 20);
+            this.txtArea.ReadOnly = true;
+            this.txtArea.Size = new System.Drawing.Size(148, 26);
             this.txtArea.TabIndex = 10;
-            this.txtArea.Visible = false;
             this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
             // 
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(427, 99);
+            this.lblArea.Location = new System.Drawing.Point(640, 152);
+            this.lblArea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(32, 13);
+            this.lblArea.Size = new System.Drawing.Size(47, 20);
             this.lblArea.TabIndex = 9;
             this.lblArea.Text = "Area:";
-            this.lblArea.Visible = false;
             this.lblArea.Click += new System.EventHandler(this.lblArea_Click);
             // 
             // txtRaio
             // 
-            this.txtRaio.Location = new System.Drawing.Point(66, 136);
+            this.txtRaio.Location = new System.Drawing.Point(99, 209);
+            this.txtRaio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRaio.Name = "txtRaio";
-            this.txtRaio.Size = new System.Drawing.Size(100, 20);
+            this.txtRaio.Size = new System.Drawing.Size(148, 26);
             this.txtRaio.TabIndex = 8;
             this.txtRaio.Visible = false;
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(66, 109);
+            this.txtAltura.Location = new System.Drawing.Point(99, 168);
+            this.txtAltura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(100, 20);
+            this.txtAltura.Size = new System.Drawing.Size(148, 26);
             this.txtAltura.TabIndex = 7;
             this.txtAltura.Visible = false;
             // 
             // txtBase
             // 
-            this.txtBase.Location = new System.Drawing.Point(66, 83);
+            this.txtBase.Location = new System.Drawing.Point(99, 128);
+            this.txtBase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBase.Name = "txtBase";
-            this.txtBase.Size = new System.Drawing.Size(100, 20);
+            this.txtBase.Size = new System.Drawing.Size(148, 26);
             this.txtBase.TabIndex = 6;
             this.txtBase.Visible = false;
             // 
             // lblBase
             // 
             this.lblBase.AutoSize = true;
-            this.lblBase.Location = new System.Drawing.Point(25, 83);
+            this.lblBase.Location = new System.Drawing.Point(38, 128);
+            this.lblBase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBase.Name = "lblBase";
-            this.lblBase.Size = new System.Drawing.Size(34, 13);
+            this.lblBase.Size = new System.Drawing.Size(50, 20);
             this.lblBase.TabIndex = 3;
             this.lblBase.Text = "&Base:";
             this.lblBase.Visible = false;
@@ -198,9 +207,10 @@
             // lblRaio
             // 
             this.lblRaio.AutoSize = true;
-            this.lblRaio.Location = new System.Drawing.Point(25, 139);
+            this.lblRaio.Location = new System.Drawing.Point(38, 214);
+            this.lblRaio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRaio.Name = "lblRaio";
-            this.lblRaio.Size = new System.Drawing.Size(32, 13);
+            this.lblRaio.Size = new System.Drawing.Size(46, 20);
             this.lblRaio.TabIndex = 5;
             this.lblRaio.Text = "&Raio:";
             this.lblRaio.Visible = false;
@@ -208,19 +218,21 @@
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(25, 111);
+            this.lblAltura.Location = new System.Drawing.Point(38, 171);
+            this.lblAltura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(37, 13);
+            this.lblAltura.Size = new System.Drawing.Size(55, 20);
             this.lblAltura.TabIndex = 4;
             this.lblAltura.Text = "&Altura:";
             this.lblAltura.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
@@ -240,7 +252,7 @@
         private System.Windows.Forms.TextBox txtBase;
         private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.TextBox txtRaio;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPerimetro;
         private System.Windows.Forms.Label lblPerimetro;
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Label lblArea;

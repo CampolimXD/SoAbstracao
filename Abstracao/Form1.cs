@@ -74,9 +74,9 @@ namespace Abstracao
         private void Selecionar_Triangulo_reto()
         {
             ExibirBase(true);
-            ExibirAltura(false);
+            ExibirAltura(true);
             ExibirRaio(false);
-            ///area = (baseTriangulo * alturaTriangulo) / 2;
+          
 
         }
         private void Selecionar_Triangulo_equilatero()
@@ -84,14 +84,14 @@ namespace Abstracao
             ExibirBase(true);
             ExibirAltura(false);
             ExibirRaio(false);
-            // area = (Math.Sqrt(3) / 4) * Math.Pow(baseTriangulo, 2);
+            
         }
         private void Selecionar_Triangulo_isoceles()
         {
             ExibirBase(true);
-            ExibirAltura(true); 
+            ExibirAltura(true);
             ExibirRaio(false);
-            //area = (baseTriangulo * alturaTriangulo) / 2;
+       
 
         }
         private void Tipos_triangulo()
@@ -111,7 +111,7 @@ namespace Abstracao
 
                     Selecionar_Triangulo_equilatero();
                     break;
-               
+
                 default:
                     break;
             }
@@ -126,7 +126,7 @@ namespace Abstracao
         }
         private void Selecionar_Circunferencia()
         {
-            
+
             ExibirRaio(true);
             ExibirAltura(false);
             ExibirBase(false);
@@ -134,7 +134,7 @@ namespace Abstracao
 
         }
 
-       private void ExibirBase(bool visivel)
+        private void ExibirBase(bool visivel)
         {
             lblBase.Visible = txtBase.Visible = visivel;
         }
@@ -159,18 +159,90 @@ namespace Abstracao
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-            if (cmbForma.Text.Equals("Quadrado"))
+            FormaGeometrica forma = null;
+
+            // Criação da forma baseada na seleção
+            switch (cmbForma.Text)
             {
-                FormaGeometrica quadrado = new Quadrado()
-                {
-                    // Base = Convert.ToDouble(txtBase.Text)
-                };
-                cmbObjetos.Items.Add(quadrado);
+                case "Quadrado":
+                    forma = new Quadrado
+                    {
+                        _Base = Convert.ToDouble(txtBase.Text)
+                    };
+                    break;
+
+                case "Retangulo":
+                    forma = new Retangulo
+                    {
+                        _Base = Convert.ToDouble(txtBase.Text),
+                        Altura = Convert.ToDouble(txtAltura.Text)
+                    };
+                    break;
+
+                case "Circunferencia":
+                    forma = new Circunferencia
+                    {
+                        Raio = Convert.ToDouble(txtRaio.Text)
+                    };
+                    break;
+
+                case "Triangulo":                    
+                    {
+                        
+                        switch (cmbTriangulo.Text)
+                        {
+                            case "Isoceles":                               
+                                    forma = new TrianguloIsosceles()
+                                    {
+                                        _Base = Convert.ToDouble(txtBase.Text),
+                                        Altura = Convert.ToDouble(txtAltura.Text)
+                                    };
+                                break;                               
+
+                            case "Reto":
+                                    forma = new TrianguloReto()
+                                    {
+                                        _Base = Convert.ToDouble(txtBase.Text),
+                                        Altura = Convert.ToDouble(txtAltura.Text)
+                                    };
+                                break;
+                             
+
+                            case "Equilatero":
+                                    forma = new TrianguloEquilatero()
+                                    {
+                                        _Base = Convert.ToDouble(txtBase.Text),
+                                    };
+                                break;
+                               
+                        }
+                       
+                    };
+                    break;
             }
+            
+            if (forma != null)
+            {
+                cmbObjetos.Items.Add(forma);
+            }
+            LimpaNum();
+        }
+        private void LimpaNum()
+        {
+            txtAltura.Text = "";
+            txtRaio.Text = "";
+            txtBase.Text = "";
         }
 
         private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            FormaGeometrica obj = cmbObjetos.SelectedItem as FormaGeometrica;
+            if (obj != null)
+            {
+                txtArea.Text = obj.CalcularArea().ToString("F2");
+                txtPerimetro.Text = obj.CalcularPerimetro().ToString("F2");
+            }
 
         }
 

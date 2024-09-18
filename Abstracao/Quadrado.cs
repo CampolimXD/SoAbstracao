@@ -4,11 +4,11 @@ namespace Abstracao
 {
     public class Quadrado : FormaGeometrica
     {
-       
 
-        private int _base;
 
-        public int Base
+        private double _base;
+
+        public double _Base
         {
             get { return _base; }
             set { _base = value; }

@@ -27,7 +27,7 @@ namespace Abstracao
         }
         public override string ToString()
         {
-            return "Quadrado";
+            return "Quadrado de base: " + _Base;
         }
     }
 }

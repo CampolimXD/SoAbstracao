@@ -39,7 +39,7 @@ namespace Abstracao
         }
         public override string ToString()
         {
-            return "TriânguloIsósceles";
+            return "Triângulo Isósceles de base: "+ _Base + "e altura: " + Altura;
         }
     }
 }

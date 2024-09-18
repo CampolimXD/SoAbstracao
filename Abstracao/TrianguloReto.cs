@@ -39,7 +39,7 @@ namespace Abstracao
         }
         public override string ToString()
         {
-            return "TriânguloReto";
+            return "Triângulo Reto de base: " + _Base;
         }
 
     }

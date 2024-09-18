@@ -96,7 +96,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forma geometrica";
-            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnCriar
             // 
@@ -113,7 +112,7 @@
             this.cmbObjetos.FormattingEnabled = true;
             this.cmbObjetos.Location = new System.Drawing.Point(462, 35);
             this.cmbObjetos.Name = "cmbObjetos";
-            this.cmbObjetos.Size = new System.Drawing.Size(121, 21);
+            this.cmbObjetos.Size = new System.Drawing.Size(150, 21);
             this.cmbObjetos.TabIndex = 13;
             this.cmbObjetos.SelectedIndexChanged += new System.EventHandler(this.cmbObjetos_SelectedIndexChanged);
             // 
@@ -123,7 +122,7 @@
             this.txtPerimetro.Location = new System.Drawing.Point(474, 123);
             this.txtPerimetro.Name = "txtPerimetro";
             this.txtPerimetro.ReadOnly = true;
-            this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
+            this.txtPerimetro.Size = new System.Drawing.Size(138, 20);
             this.txtPerimetro.TabIndex = 12;
             // 
             // lblPerimetro
@@ -141,9 +140,8 @@
             this.txtArea.Location = new System.Drawing.Point(474, 92);
             this.txtArea.Name = "txtArea";
             this.txtArea.ReadOnly = true;
-            this.txtArea.Size = new System.Drawing.Size(100, 20);
+            this.txtArea.Size = new System.Drawing.Size(138, 20);
             this.txtArea.TabIndex = 10;
-           //this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
             // 
             // lblArea
             // 
@@ -153,7 +151,6 @@
             this.lblArea.Size = new System.Drawing.Size(32, 13);
             this.lblArea.TabIndex = 9;
             this.lblArea.Text = "Area:";
-            //tis.lblArea.Click += new System.EventHandler(this.lblArea_Click);
             // 
             // txtRaio
             // 

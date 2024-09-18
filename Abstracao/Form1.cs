@@ -100,11 +100,8 @@ namespace Abstracao
         {
 
             FormaGeometrica obj = cmbObjetos.SelectedItem as FormaGeometrica;
-            if (obj != null)
-            {
-                txtArea.Text = obj.CalcularArea().ToString("F2");
-                txtPerimetro.Text = obj.CalcularPerimetro().ToString("F2");
-            }
+            txtArea.Text = obj.CalcularArea().ToString("F2");
+            txtPerimetro.Text = obj.CalcularPerimetro().ToString("F2");           
 
         }
 
@@ -124,6 +121,9 @@ namespace Abstracao
             txtAltura.Text = "";
             txtRaio.Text = "";
             txtBase.Text = "";
+            txtArea.Text = "";
+            txtPerimetro.Text = "";
+            cmbObjetos.Text = "";
         }
 
         // funções de exibição raiz

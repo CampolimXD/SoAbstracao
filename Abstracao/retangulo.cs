@@ -36,7 +36,7 @@ namespace Abstracao
         }
         public override string ToString()
         {
-            return "Retângulo";
+            return "Retângulo de base: " + _Base+ "e altura: " + Altura;
         }
 
     }

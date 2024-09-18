@@ -16,16 +16,16 @@ namespace Abstracao
             set { _base = value; }
         }
 
-        public double altura;
+        private double altura;
 
         public double Altura
         {
-            get { return _base; }
-            set { _base = value; }
+            get { return altura; }
+            set { altura = value; }
         }
         public override double CalcularArea()
         {
-            return ((_base * altura) / 2);
+            return (altura * _base) / 2;
         }
             
 

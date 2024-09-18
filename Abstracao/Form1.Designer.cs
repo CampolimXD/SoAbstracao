@@ -96,7 +96,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forma geometrica";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnCriar
             // 
@@ -143,7 +143,7 @@
             this.txtArea.ReadOnly = true;
             this.txtArea.Size = new System.Drawing.Size(100, 20);
             this.txtArea.TabIndex = 10;
-            this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
+           //this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
             // 
             // lblArea
             // 
@@ -153,7 +153,7 @@
             this.lblArea.Size = new System.Drawing.Size(32, 13);
             this.lblArea.TabIndex = 9;
             this.lblArea.Text = "Area:";
-            this.lblArea.Click += new System.EventHandler(this.lblArea_Click);
+            //tis.lblArea.Click += new System.EventHandler(this.lblArea_Click);
             // 
             // txtRaio
             // 

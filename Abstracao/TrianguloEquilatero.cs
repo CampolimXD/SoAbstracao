@@ -25,5 +25,9 @@ namespace Abstracao
         {
             return 3 * _base;
         }
+        public override string ToString()
+        {
+            return "Triângulo Equilátero";
+        }
     }
 }

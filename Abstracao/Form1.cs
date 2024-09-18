@@ -13,14 +13,13 @@ namespace Abstracao
 {
     public partial class Form1 : Form
     {
+        //variaveis globais 
+
+        FormaGeometrica forma = null;
+
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,212 +27,75 @@ namespace Abstracao
             switch (cmbForma.Text)
             {
                 case "Quadrado":
-
                     Selecionar_Quadrado();
-                    break;
+                break;
 
                 case "Triangulo":
-
                     Selecionar_Triangulo();
-                    break;
+                break;
+
                 case "Retangulo":
-
                     Selecionar_Retangulo();
-                    break;
-                case "Circunferencia":
+                break;
 
+                case "Circunferencia":
                     Selecionar_Circunferencia();
-                    break;
+                break;
+
                 default:
                     break;
             }
-
-
-        }
-
-
-        private void Selecionar_Quadrado()
-        {
-            ExibirBase(true);
-            ExibirRaio(false);
-            ExibirAltura(false);
-            MostraTriangulos(false);
-
-        }
-        private void Selecionar_Triangulo()
-        {
-            ExibirRaio(false);
-            ExibirAltura(false);
-            ExibirBase(false);
-            MostraTriangulos(true);
-        }
-        private void MostraTriangulos(bool visivel)
-        {
-            cmbTriangulo.Visible = visivel;
-        }
-        private void Selecionar_Triangulo_reto()
-        {
-            ExibirBase(true);
-            ExibirAltura(true);
-            ExibirRaio(false);
-          
-
-        }
-        private void Selecionar_Triangulo_equilatero()
-        {
-            ExibirBase(true);
-            ExibirAltura(false);
-            ExibirRaio(false);
-            
-        }
-        private void Selecionar_Triangulo_isoceles()
-        {
-            ExibirBase(true);
-            ExibirAltura(true);
-            ExibirRaio(false);
-       
-
         }
         private void Tipos_triangulo()
         {
             switch (cmbTriangulo.Text)
             {
                 case "Isoceles":
-
                     Selecionar_Triangulo_isoceles();
-                    break;
+                break;
 
                 case "Reto":
-
                     Selecionar_Triangulo_reto();
-                    break;
-                case "Equilatero":
+                break;
 
+                case "Equilatero":
                     Selecionar_Triangulo_equilatero();
-                    break;
+                break;
 
                 default:
                     break;
             }
         }
-        private void Selecionar_Retangulo()
-        {
-            ExibirAltura(true);
-            ExibirBase(true);
-            ExibirRaio(false);
-            MostraTriangulos(false);
-
-        }
-        private void Selecionar_Circunferencia()
-        {
-
-            ExibirRaio(true);
-            ExibirAltura(false);
-            ExibirBase(false);
-            MostraTriangulos(false);
-
-        }
-
-        private void ExibirBase(bool visivel)
-        {
-            lblBase.Visible = txtBase.Visible = visivel;
-        }
-        private void ExibirAltura(bool visivel)
-        {
-            lblAltura.Visible = txtAltura.Visible = visivel;
-        }
-        private void ExibirRaio(bool visivel)
-        {
-            lblRaio.Visible = txtRaio.Visible = visivel;
-        }
-
-        private void txtArea_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblArea_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-            FormaGeometrica forma = null;
+           switch (cmbForma.Text)
+           {
+               case "Quadrado":
+                    CaseQuadrado();
+               break;
 
-            // Criação da forma baseada na seleção
-            switch (cmbForma.Text)
-            {
-                case "Quadrado":
-                    forma = new Quadrado
-                    {
-                        _Base = Convert.ToDouble(txtBase.Text)
-                    };
-                    break;
+               case "Retangulo":
+                    CaseRetangulo();    
+               break;
 
-                case "Retangulo":
-                    forma = new Retangulo
-                    {
-                        _Base = Convert.ToDouble(txtBase.Text),
-                        Altura = Convert.ToDouble(txtAltura.Text)
-                    };
-                    break;
+               case "Circunferencia":
+                    CaseCircunferencia();
+               break;
 
-                case "Circunferencia":
-                    forma = new Circunferencia
-                    {
-                        Raio = Convert.ToDouble(txtRaio.Text)
-                    };
-                    break;
-
-                case "Triangulo":                    
-                    {
-                        
-                        switch (cmbTriangulo.Text)
-                        {
-                            case "Isoceles":                               
-                                    forma = new TrianguloIsosceles()
-                                    {
-                                        _Base = Convert.ToDouble(txtBase.Text),
-                                        Altura = Convert.ToDouble(txtAltura.Text)
-                                    };
-                                break;                               
-
-                            case "Reto":
-                                    forma = new TrianguloReto()
-                                    {
-                                        _Base = Convert.ToDouble(txtBase.Text),
-                                        Altura = Convert.ToDouble(txtAltura.Text)
-                                    };
-                                break;
-                             
-
-                            case "Equilatero":
-                                    forma = new TrianguloEquilatero()
-                                    {
-                                        _Base = Convert.ToDouble(txtBase.Text),
-                                    };
-                                break;
-                               
-                        }
-                       
-                    };
-                    break;
-            }
+               case "Triangulo":                                       
+                    CaseTriangulo();                                                 
+               break;
+                }
             
             if (forma != null)
             {
                 cmbObjetos.Items.Add(forma);
             }
+
             LimpaNum();
         }
-        private void LimpaNum()
-        {
-            txtAltura.Text = "";
-            txtRaio.Text = "";
-            txtBase.Text = "";
-        }
-
+        
         private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -249,6 +111,152 @@ namespace Abstracao
         private void cmbTriangulo_SelectedIndexChanged(object sender, EventArgs e)
         {
             Tipos_triangulo();
+        }
+
+
+        /////////////
+        // Funções //
+        ///////////// 
+               
+        // função de limpeza
+        private void LimpaNum() // limpa os campos .txt
+        {
+            txtAltura.Text = "";
+            txtRaio.Text = "";
+            txtBase.Text = "";
+        }
+
+        // funções de exibição raiz
+        private void ExibirBase(bool visivel) // exibe a base no desing
+        {
+            lblBase.Visible = txtBase.Visible = visivel;
+        }
+        private void ExibirAltura(bool visivel) // exibe a altura no desing
+        {
+            lblAltura.Visible = txtAltura.Visible = visivel;
+        }
+        private void ExibirRaio(bool visivel) // exibe o raio no desing
+        {
+            lblRaio.Visible = txtRaio.Visible = visivel;
+        }
+        
+        // funções de exibição apos a seleção da forma geometrica
+        private void Selecionar_Quadrado() // exibe para caso o quadrado seja selecionado
+        {
+            ExibirBase(true);
+            ExibirRaio(false);
+            ExibirAltura(false);
+            MostraTriangulos(false);
+        }
+        private void Selecionar_Triangulo() // exibe para caso o triangulo seja selecionado
+        {                                  // , antes de selecionar o tipo
+            ExibirRaio(false);
+            ExibirAltura(false);
+            ExibirBase(false);
+            MostraTriangulos(true);
+        }
+        private void Selecionar_Retangulo() // exibe para caso o retangulo seja selecionado
+        {
+            ExibirAltura(true);
+            ExibirBase(true);
+            ExibirRaio(false);
+            MostraTriangulos(false);
+        }
+        private void Selecionar_Circunferencia() // exibe para caso a circunferencia seja selecionada
+        {
+            ExibirRaio(true);
+            ExibirAltura(false);
+            ExibirBase(false);
+            MostraTriangulos(false);
+        }
+
+        // Triangulo e suas variações 
+        private void MostraTriangulos(bool visivel) //exibe o cmbTriangulo para que o tipo 
+        {                                          // de triangulo seja selecionado    
+            cmbTriangulo.Visible = visivel;
+        }
+
+        private void Selecionar_Triangulo_isoceles() // exibe para o triangulo isoceles
+        {
+            ExibirBase(true);
+            ExibirAltura(true);
+            ExibirRaio(false);
+        }
+        private void Selecionar_Triangulo_equilatero() // exibe para o triangulo equilatero
+        {
+            ExibirBase(true);
+            ExibirAltura(false);
+            ExibirRaio(false);
+        }
+        private void Selecionar_Triangulo_reto() // exibe para o triangulo reto
+        {
+            ExibirBase(true);
+            ExibirAltura(true);
+            ExibirRaio(false);
+        }
+
+        // funções de caso Switch criar
+        private void CaseQuadrado() // caso quadrado seja selecionado no cmbFormas
+        {
+            forma = new Quadrado
+            {
+                _Base = Convert.ToDouble(txtBase.Text)
+            };
+        }
+        private void CaseRetangulo() // caso o retangulo seja selecionado no cmbFormas
+        {
+            forma = new Retangulo
+            {
+                _Base = Convert.ToDouble(txtBase.Text),
+                Altura = Convert.ToDouble(txtAltura.Text)
+            };
+        }
+        private void CaseCircunferencia() // caso a circunferencia seja selecionada no cmbFormas
+        {
+            forma = new Circunferencia
+            {
+                Raio = Convert.ToDouble(txtRaio.Text)
+            };
+        }
+        private void CaseTriangulo() // caso triangulo seja selecionado no cmbFormas
+        {
+            switch (cmbTriangulo.Text)
+            {
+                case "Isoceles":
+                    CaseIsoceles();
+                    break;
+
+                case "Reto":
+                    CaseReto();
+                    break;
+
+                case "Equilatero":
+                    CaseEquilatero();
+                    break;
+            }
+        }
+        private void CaseIsoceles() // caso o triangulo isoceles seja selecionado no cmbTriangulo
+        {
+            forma = new TrianguloIsosceles()
+            {
+                _Base = Convert.ToDouble(txtBase.Text),
+                Altura = Convert.ToDouble(txtAltura.Text)
+            };
+        }
+        private void CaseReto()// caso o triangulo reto seja selecionado no cmbTriangulo
+        {
+            forma = new TrianguloReto()
+            {
+                _Base = Convert.ToDouble(txtBase.Text),
+                Altura = Convert.ToDouble(txtAltura.Text)
+            };
+        }
+        private void CaseEquilatero()   // caso o triangulo equilatero seja selecionado no cmbTriangulo
+        {
+            forma = new TrianguloEquilatero()
+            {
+                _Base = Convert.ToDouble(txtBase.Text),
+            };
         }
     }
 }

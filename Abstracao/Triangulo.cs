@@ -8,5 +8,7 @@ namespace Abstracao
 {
     public abstract class Triangulo : FormaGeometrica
     {
+
+
     }
 }

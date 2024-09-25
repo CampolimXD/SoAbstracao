@@ -8,22 +8,26 @@ namespace Abstracao
 {
     public class TrianguloEquilatero : Triangulo
     {
-        public double lado;
+        private double _base;
 
-        public double Lado
+        public double _Base
         {
-            get { return lado; }
-            set { lado = value; }
+            get { return _base; }
+            set { _base = value; }
         }
 
         public override double CalcularArea()
         {
-            return (Math.Sqrt(3) / 4) * Math.Pow(lado, 2);
+            return (Math.Sqrt(3) / 4) * Math.Pow(_base, 2);
         }
 
         public override double CalcularPerimetro()
         {
-            return 3 * lado;
+            return 3 * _base;
+        }
+        public override string ToString()
+        {
+            return "Triângulo Equilátero de base: " + _base;
         }
     }
 }

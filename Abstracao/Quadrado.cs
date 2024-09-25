@@ -4,11 +4,9 @@ namespace Abstracao
 {
     public class Quadrado : FormaGeometrica
     {
-       
-
         private double _base;
 
-        public double Base
+        public double _Base
         {
             get { return _base; }
             set { _base = value; }
@@ -25,10 +23,10 @@ namespace Abstracao
         {
             return (_base * 4);
         }
-
+        
         public override string ToString()
         {
-            return $"Quadrado ({_base})";
+            return "Quadrado de base: " + _Base;
         }
     }
 }

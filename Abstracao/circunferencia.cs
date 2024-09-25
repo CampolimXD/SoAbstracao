@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Abstracao
 {
-    internal class circunferencia : FormaGeometrica
+    internal class Circunferencia : FormaGeometrica
     {
         private double raio;
 

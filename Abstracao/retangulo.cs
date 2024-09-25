@@ -34,6 +34,10 @@ namespace Abstracao
         {
             return (2 * (_base + altura));
         }
+        public override string ToString()
+        {
+            return "Retângulo de base: " + _Base+ "e altura: " + Altura;
+        }
 
     }
 }

@@ -64,14 +64,15 @@
             // 
             this.cmbTriangulo.FormattingEnabled = true;
             this.cmbTriangulo.Items.AddRange(new object[] {
+            "Reto",
             "Equilatero",
-            "Isoceles",
-            "Reto"});
+            "Isoceles"});
             this.cmbTriangulo.Location = new System.Drawing.Point(180, 35);
             this.cmbTriangulo.Name = "cmbTriangulo";
             this.cmbTriangulo.Size = new System.Drawing.Size(121, 21);
             this.cmbTriangulo.TabIndex = 1;
             this.cmbTriangulo.Visible = false;
+            this.cmbTriangulo.SelectedIndexChanged += new System.EventHandler(this.cmbTriangulo_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -95,7 +96,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Forma geometrica";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnCriar
             // 
@@ -110,26 +110,20 @@
             // cmbObjetos
             // 
             this.cmbObjetos.FormattingEnabled = true;
-            this.cmbObjetos.Items.AddRange(new object[] {
-            "Equilatero",
-            "Isoceles",
-            "Reto"});
             this.cmbObjetos.Location = new System.Drawing.Point(462, 35);
             this.cmbObjetos.Name = "cmbObjetos";
-            this.cmbObjetos.Size = new System.Drawing.Size(121, 21);
+            this.cmbObjetos.Size = new System.Drawing.Size(150, 21);
             this.cmbObjetos.TabIndex = 13;
-            this.cmbObjetos.Visible = false;
-            this.cmbObjetos.SelectedIndexChanged += new System.EventHandler(this.cmbObjetos_SelectedIndexChanged_1);
+            this.cmbObjetos.SelectedIndexChanged += new System.EventHandler(this.cmbObjetos_SelectedIndexChanged);
             // 
             // txtPerimetro
             // 
             this.txtPerimetro.Enabled = false;
             this.txtPerimetro.Location = new System.Drawing.Point(474, 123);
             this.txtPerimetro.Name = "txtPerimetro";
-            this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
+            this.txtPerimetro.ReadOnly = true;
+            this.txtPerimetro.Size = new System.Drawing.Size(138, 20);
             this.txtPerimetro.TabIndex = 12;
-            this.txtPerimetro.Visible = false;
-            this.txtPerimetro.TextChanged += new System.EventHandler(this.txtPerimetro_TextChanged);
             // 
             // lblPerimetro
             // 
@@ -139,17 +133,15 @@
             this.lblPerimetro.Size = new System.Drawing.Size(54, 13);
             this.lblPerimetro.TabIndex = 11;
             this.lblPerimetro.Text = "Perimetro:";
-            this.lblPerimetro.Visible = false;
             // 
             // txtArea
             // 
             this.txtArea.Enabled = false;
             this.txtArea.Location = new System.Drawing.Point(474, 92);
             this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(100, 20);
+            this.txtArea.ReadOnly = true;
+            this.txtArea.Size = new System.Drawing.Size(138, 20);
             this.txtArea.TabIndex = 10;
-            this.txtArea.Visible = false;
-            this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
             // 
             // lblArea
             // 
@@ -159,8 +151,6 @@
             this.lblArea.Size = new System.Drawing.Size(32, 13);
             this.lblArea.TabIndex = 9;
             this.lblArea.Text = "Area:";
-            this.lblArea.Visible = false;
-            this.lblArea.Click += new System.EventHandler(this.lblArea_Click);
             // 
             // txtRaio
             // 

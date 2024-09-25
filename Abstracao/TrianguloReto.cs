@@ -8,36 +8,38 @@ namespace Abstracao
 {
     public class TrianguloReto : Triangulo
     {
-        public double lado;
+        private double _base;
 
-        public double Lado
+        public double _Base
         {
-            get { return lado; }
-            set { lado = value; }
+            get { return _base; }
+            set { _base = value; }
         }
 
-        public double altura;
+        private double altura;
 
         public double Altura
         {
-            get { return lado; }
-            set { lado = value; }
+            get { return altura; }
+            set { altura = value; }
         }
         public override double CalcularArea()
         {
-            return (lado * altura) / 2;
+            return (altura * _base) / 2;
         }
-        int h =0;
-
-        
+            
 
         public override double CalcularPerimetro()
         {
 
             double hipotenusa;
-            hipotenusa = System.Math.Sqrt(Math.Pow(lado, 2) + Math.Pow(altura, 2));      
-            return lado + hipotenusa + altura;
+            hipotenusa = System.Math.Sqrt(Math.Pow(_base, 2) + Math.Pow(altura, 2));      
+            return _base + hipotenusa + altura;
 
+        }
+        public override string ToString()
+        {
+            return "Triângulo Reto de base: " + _Base;
         }
 
     }

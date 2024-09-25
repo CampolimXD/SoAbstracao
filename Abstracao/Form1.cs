@@ -41,7 +41,7 @@ namespace Abstracao
                 case "Circunferencia":
                     Selecionar_Circunferencia();
                 break;
-
+                
                 default:
                     break;
             }
@@ -58,6 +58,7 @@ namespace Abstracao
                     Selecionar_Triangulo_reto();
                 break;
 
+
                 case "Equilatero":
                     Selecionar_Triangulo_equilatero();
                 break;
@@ -69,6 +70,7 @@ namespace Abstracao
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
+
            switch (cmbForma.Text)
            {
                case "Quadrado":
@@ -98,11 +100,9 @@ namespace Abstracao
         
         private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             FormaGeometrica obj = cmbObjetos.SelectedItem as FormaGeometrica;
             txtArea.Text = obj.CalcularArea().ToString("F2");
             txtPerimetro.Text = obj.CalcularPerimetro().ToString("F2");           
-
         }
 
         private void cmbTriangulo_SelectedIndexChanged(object sender, EventArgs e)
@@ -234,6 +234,19 @@ namespace Abstracao
                     CaseEquilatero();
                     break;
             }
+           
+        }
+        
+        private void cmbObjetos_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            FormaGeometrica obj =cmbObjetos.SelectedItem as FormaGeometrica;
+            txtArea.Text = obj.CalcularArea().ToString();
+            txtPerimetro.Text = obj.CalcularPerimetro().ToString();           
+        }
+
+        private void txtPerimetro_TextChanged(object sender, EventArgs e)
+        {
+
         }
         private void CaseIsoceles() // caso o triangulo isoceles seja selecionado no cmbTriangulo
         {
@@ -259,4 +272,5 @@ namespace Abstracao
             };
         }
     }
+
 }
